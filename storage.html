@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storage Details</title>
+    <!-- Updated Google Fonts link -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@700&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="storage.css"> <!-- Storage-specific styles -->
+    <link rel="stylesheet" href="styles.css"> <!-- Main styles for consistency -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"> <!-- FontAwesome Icons -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js for Bar Graph -->
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">FileShare</div>
+        <ul class="nav-links">
+            <li><a href="main.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="profile.html"><i class="fas fa-user"></i> Profile</a></li>
+            <li><a href="storage.html" class="active"><i class="fas fa-database"></i> Storage</a></li>
+            <li><a href="index.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="scroll-btn"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <section class="storage-section">
+            <h1 class="storage-title"><i class="fas fa-database"></i> Storage Details</h1>
+
+            <!-- Storage Bar Graph -->
+            <div class="bargraph-container">
+                <canvas id="storageChart"></canvas>
+            </div>
+
+            <!-- Storage Usage Summary -->
+            <div class="storage-summary">
+                <h2>Usage Summary</h2>
+                <ul>
+                    <li><i class="fas fa-file-upload"></i> Files Stored: <strong>25 GB</strong> / 100 GB</li>
+                    <li><i class="fas fa-video"></i> Videos: <strong>10 GB</strong> / 50 GB</li>
+                    <li><i class="fas fa-image"></i> Images: <strong>5 GB</strong> / 30 GB</li>
+                    <li><i class="fas fa-music"></i> Music: <strong>2 GB</strong> / 10 GB</li>
+                    <li><i class="fas fa-file-alt"></i> Documents: <strong>8 GB</strong> / 20 GB</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 FileShare. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#privacy">Privacy Policy</a> | 
+                <a href="#terms">Terms of Service</a> | 
+                <a href="#contact">Contact Us</a>
+            </div>
+            <div class="social-icons">
+                <a href="#facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#linkedin"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script to render the bar graph -->
+    <script>
+        var ctx = document.getElementById('storageChart').getContext('2d');
+        var storageChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Files', 'Videos', 'Images', 'Music', 'Documents'],
+                datasets: [{
+                    label: 'Storage Usage (GB)',
+                    data: [25, 10, 5, 2, 8],  // Sample data for storage usage
+                    backgroundColor: [
+                        '#ff8c42', '#ff8c42', '#ff8c42', '#ff8c42', '#ff8c42'
+                    ],
+                    borderColor: [
+                        '#e67e34', '#e67e34', '#e67e34', '#e67e34', '#e67e34'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100
+                    }
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>

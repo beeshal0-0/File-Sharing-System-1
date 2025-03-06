@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login</title>
+    <link rel="stylesheet" href="/static/styles.css"> <!-- Correct path to styles.css -->
+</head>
+<body>
+<div class="auth-container">
+    <h2>User Login</h2>
+    <form id="loginForm">
+        <div class="input-group">
+            <label for="loginUsername">Username</label>
+            <input type="text" id="loginUsername" name="username" required>
+        </div>
+
+        <div class="input-group">
+            <label for="loginPassword">Password</label>
+            <input type="password" id="loginPassword" name="password" required>
+        </div>
+
+        <button type="submit">Login</button>
+    </form>
+
+    <!-- Button to go to register page -->
+    <p>Haven't registered yet? <a href="/register">Register now</a></p> <!-- Link to the registration page -->
+</div>
+
+<script>
+    // Handle Login Form Submission
+    document.getElementById("loginForm").addEventListener("submit", async function (event) {
+        event.preventDefault(); // Prevent default form submission
+
+        // Gather User Login Data
+        const loginData = {
+            username: document.getElementById("loginUsername").value,
+            password: document.getElementById("loginPassword").value
+        };
+
+        try {
+            // Send Login Credentials to Backend
+            const response = await fetch("/api/users/login", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(loginData)
+            });
+
+            // Process Response from Backend
+            if (response.ok) {
+                alert("Login Successful! Redirecting...");
+                setTimeout(() => {
+                    window.location.href = "/dashboard"; // Redirect to dashboard or main page
+                }, 1000);
+            } else {
+                const errorMessage = await response.text(); // Get error message from backend
+                alert("Login Failed: " + errorMessage);
+            }
+        } catch (error) {
+            console.error("Error during login:", error);
+            alert("An unexpected error occurred. Please try again.");
+        }
+    });
+</script>
+</body>
+</html>

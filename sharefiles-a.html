@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share Files - FileShare</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@700&family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">FileShare</div>
+        <ul class="nav-links">
+            <li><a href="main.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="profile.html"><i class="fas fa-user"></i> Profile</a></li>
+            <li><a href="storage.html"><i class="fas fa-database"></i> Storage Details</a></li>
+            <li><a href="index.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content full-width">
+        <section class="home-section">
+            <h1><i class="fas fa-share-alt"></i> Share Files</h1>
+            <p class="intro">
+                Share files with specific users effortlessly.
+            </p>
+            <div class="share-form">
+                <form onsubmit="shareFile(event)">
+                    <label for="file-select">Select File:</label>
+                    <select id="file-select" name="file-select" required>
+                        <option value="report.pdf">report.pdf</option>
+                        <option value="image.png">image.png</option>
+                    </select>
+                    <label for="user-select">Select User:</label>
+                    <select id="user-select" name="user-select" required>
+                        <option value="john@example.com">John Doe (john@example.com)</option>
+                        <option value="jane@example.com">Jane Smith (jane@example.com)</option>
+                    </select>
+                    <button type="submit" class="btn-share">Share</button>
+                </form>
+            </div>
+        </section>
+    
+        <!-- Shared Files Section -->
+        <section class="shared-files-section">
+            <h1><i class="fas fa-download"></i> Shared Files</h1>
+            <p class="intro">Files shared with you can be downloaded below:</p>
+            <div class="shared-files-list">
+                <div class="file-item">
+                    <span>report.pdf</span>
+                    <button class="btn-download"><i class="fas fa-download"></i> Download</button>
+                </div>
+                <div class="file-item">
+                    <span>image.png</span>
+                    <button class="btn-download"><i class="fas fa-download"></i> Download</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2023 FileShare. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#privacy">Privacy Policy</a> | 
+                <a href="#terms">Terms of Service</a> | 
+                <a href="#contact">Contact Us</a>
+            </div>
+            <div class="social-icons">
+                <a href="#facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#linkedin"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Confirmation and Redirection -->
+    <script>
+        function shareFile(event) {
+            event.preventDefault(); // Prevent form submission
+            const file = document.getElementById("file-select").value;
+            const user = document.getElementById("user-select").value;
+            if (confirm(`Are you sure you want to share ${file} with ${user}?`)) {
+                alert("File shared successfully!");
+                window.location.href = "main.html"; // Redirect to Home/Dashboard
+            }
+        }
+    </script>
+</body>
+</html>

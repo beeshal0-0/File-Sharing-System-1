@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Password - FileShare</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@700&family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">FileShare</div>
+        <ul class="nav-links">
+            <li><a href="main.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="profile.html"><i class="fas fa-user"></i> Profile</a></li>
+            <li><a href="storage.html"><i class="fas fa-database"></i> Storage Details</a></li>
+            <li><a href="index.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content full-width">
+        <section class="home-section">
+            <h1><i class="fas fa-lock"></i> Set Password</h1>
+            <p class="intro">
+                Protect your files with a password for added security.
+            </p>
+            <div class="password-form">
+                <form onsubmit="setPassword(event)">
+                    <label for="file-select">Select File:</label>
+                    <select id="file-select" name="file-select" required>
+                        <option value="report.pdf">report.pdf</option>
+                        <option value="image.png">image.png</option>
+                    </select>
+                    <label for="password">Set Password:</label>
+                    <input type="password" id="password" name="password" required>
+                    <button type="submit" class="btn-set-password">Set Password</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2023 FileShare. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#privacy">Privacy Policy</a> | 
+                <a href="#terms">Terms of Service</a> | 
+                <a href="#contact">Contact Us</a>
+            </div>
+            <div class="social-icons">
+                <a href="#facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#linkedin"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Confirmation and Redirection -->
+    <script>
+        function setPassword(event) {
+            event.preventDefault(); // Prevent form submission
+            const file = document.getElementById("file-select").value;
+            if (confirm(`Are you sure you want to set a password for ${file}?`)) {
+                alert("Password set successfully!");
+                window.location.href = "main.html"; // Redirect to Home/Dashboard
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,1063 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #d0f0c0; /* Light Green Background */
+    color: #333; /* Dark Gray Text */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+a {
+    text-decoration: none;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000; /* Black Navbar */
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff8c42; /* Light Orange Text */
+    font-family: 'Pacifico', cursive;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar .nav-links li {
+    margin: 0 15px;
+}
+
+.navbar .nav-links a {
+    text-decoration: none;
+    color: #fff; /* White Text */
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-links a:hover {
+    color: #ff8c42; /* Light Orange on Hover */
+}
+
+.navbar .nav-links a.active {
+    color: #ff8c42; /* Light Orange for Active Page */
+    font-weight: bold;
+}
+
+/* Main Content - Expanded to Full Width */
+.main-content {
+    padding: 40px;
+    flex: 1;
+    width: 100%; /* Ensures full width without sidebar */
+}
+
+.home-section {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.home-section h1 {
+    font-size: 48px;
+    font-family: 'Montserrat', sans-serif;
+    color: #000; /* Black Text */
+    margin-bottom: 20px;
+}
+
+.home-section .highlight {
+    color: #ff8c42; /* Light Orange Highlight */
+}
+
+.home-section .intro {
+    font-size: 20px;
+    line-height: 1.6;
+    color: #555; /* Dark Gray Text */
+    margin-bottom: 40px;
+}
+
+/* Services Section */
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.service-card {
+    background-color: #fff; /* White Background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px); /* Pop-Out Effect */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.service-icon {
+    font-size: 40px;
+    color: #ff8c42; /* Light Orange Icon */
+    margin-bottom: 15px;
+}
+
+.service-card h2 {
+    font-size: 24px;
+    font-family: 'Montserrat', sans-serif;
+    color: #000; /* Black Text */
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    font-size: 16px;
+    color: #555; /* Dark Gray Text */
+}
+
+/* Footer */
+footer {
+    background-color: #000; /* Black Background */
+    color: #fff; /* White Text */
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-links {
+    margin: 10px 0;
+}
+
+.footer-links a {
+    color: #ff8c42; /* Light Orange Text */
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    color: #ff8c42; /* Light Orange Text */
+    margin: 0 10px;
+    font-size: 20px;
+}
+
+.social-icons a:hover {
+    color: #fff; /* White Text on Hover */
+}
+/* Profile Section - Matches Main Page Styling */
+.profile-section {
+    max-width: 600px;
+    margin: auto;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-picture {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: auto;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.upload-btn {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+/* User Information */
+.user-info label {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+.user-info input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #e9ecef;
+    cursor: not-allowed;
+}
+
+/* Action Buttons */
+.action-buttons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.action-buttons .action-btn {
+    background-color: #FF5733; /* Orange color */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.action-buttons .action-btn a {
+    color: white;
+    text-decoration: none;
+}
+
+.action-buttons .action-btn:hover {
+    background-color: #c13b24;
+}
+
+
+
+/* Footer Links */
+.footer-links a {
+    display: inline-flex;
+    align-items: center;
+    color: #ff8c42;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* Social Icons */
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons a {
+    color: #ff8c42;
+    margin: 0 10px;
+    font-size: 18px;
+}
+
+.social-icons a:hover {
+    color: #333;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .profile-section {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .user-info input {
+        font-size: 14px;
+    }
+
+    .upload-btn {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
+    .action-buttons button {
+        font-size: 14px;
+        padding: 10px 16px;
+    }
+}
+/* Storage Section - Matches Main Page Styling */
+.storage-section {
+    max-width: 800px;
+    margin: auto;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Storage Title */
+.storage-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.storage-summary h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.storage-summary ul {
+    list-style: none;
+    padding: 0;
+}
+
+.storage-summary li {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.storage-summary i {
+    color: #FF5733; /* Orange color for icons */
+}
+
+/* Bar Graph Container */
+.bargraph-container {
+    margin-top: 20px;
+    height: 300px; /* Set the height for the graph */
+    max-width: 100%;
+}
+
+
+/* Footer Links */
+.footer-links a {
+    display: inline-flex;
+    align-items: center;
+    color: #ff8c42;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* Social Icons */
+.social-icons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.social-icons a {
+    color: #ff8c42;
+    margin: 0 15px;
+    font-size: 22px; /* Larger icons */
+}
+
+.social-icons a:hover {
+    color: #333;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .storage-section {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .storage-summary li {
+        font-size: 14px;
+    }
+}
+/* Change User Details Section */
+.change-details-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.change-details-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.change-details-form .form-group {
+    margin-bottom: 20px;
+}
+
+.change-details-form label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.change-details-form input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.change-details-form input:focus {
+    border-color: #ff8c42;
+    background-color: #fff;
+}
+
+.btn-change-details {
+    width: 100%;
+    padding: 12px;
+    background-color: #ff8c42;
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-change-details:hover {
+    background-color: #e77a32;
+}
+
+/* Modal Styles */
+.modal-content {
+    background-color: #f8f9fa; /* Light Background */
+}
+
+.modal-header {
+    background-color: #343a40; /* Dark Header */
+    color: white;
+}
+
+.modal-body {
+    font-size: 16px;
+    color: #333;
+}
+
+.modal-footer .btn-secondary {
+    background-color: #6c757d; /* Grey for Cancel */
+}
+
+.modal-footer .btn-primary {
+    background-color: #ff8c42; /* Orange for Yes */
+}
+/* Change Password Section */
+.change-password-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.change-password-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.change-password-form .form-group {
+    margin-bottom: 20px;
+}
+
+.change-password-form label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.password-container {
+    position: relative;
+}
+
+.password-container input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    padding-right: 40px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #666;
+}
+
+.btn-change-password {
+    width: 100%;
+    padding: 12px;
+    background-color: #ff8c42;
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-change-password:hover {
+    background-color: #e77a32;
+}
+
+.btn-back {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 16px;
+    color: #ff8c42;
+    text-decoration: none;
+}
+
+.btn-back:hover {
+    text-decoration: underline;
+}
+
+/* Modal Styling */
+.modal-content {
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.modal-header {
+    background-color: #ff8c42;
+    color: white;
+}
+
+.modal-footer {
+    background-color: #f9f9f9;
+}
+
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #d0f0c0; /* Light Green Background */
+    color: #333; /* Dark Gray Text */
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+/* FileShare Logo */
+header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.fancy-logo {
+    font-family: 'Pacifico', cursive;
+    font-size: 60px;
+    color: #ff8c42; /* Light Orange Text */
+}
+
+/* Main Content */
+main {
+    text-align: center;
+}
+
+/* Button Container */
+.options-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Buttons */
+.option-btn {
+    background-color: #ff8c42;
+    color: white;
+    font-size: 24px;
+    padding: 20px 40px;
+    margin: 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.option-btn:hover {
+    background-color: #e77a32;
+}
+
+.option-btn i {
+    margin-right: 10px;
+}
+
+/* OR Separator */
+.or {
+    font-size: 32px;
+    margin: 20px;
+}
+
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #d0f0c0; /* Light Green Background */
+    color: #333; /* Dark Gray Text */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000; /* Black Navbar */
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff8c42; /* Light Orange Text */
+    font-family: 'Pacifico', cursive;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar .nav-links li {
+    margin: 0 15px;
+}
+
+.navbar .nav-links a {
+    text-decoration: none;
+    color: #fff; /* White Text */
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-links a:hover {
+    color: #ff8c42; /* Light Orange on Hover */
+}
+
+.navbar .nav-links a.active {
+    color: #ff8c42; /* Light Orange for Active Page */
+    font-weight: bold;
+}
+
+/* Admin Login Section */
+.admin-login-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding: 60px 0;
+}
+
+.admin-login-content {
+    width: 100%;
+    max-width: 400px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.admin-login-content h2 {
+    text-align: center;
+    font-size: 28px;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Form Group */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-size: 16px;
+    color: #555;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.form-group input:focus {
+    border-color: #ff8c42;
+    background-color: #fff;
+}
+
+/* Password Container with Eye Icon */
+.password-container {
+    position: relative;
+}
+
+.password-container i {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+/* Login Button */
+.btn-login {
+    width: 100%;
+    padding: 12px;
+    background-color: #ff8c42;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-login:hover {
+    background-color: #e77a32;
+}
+
+
+
+/* Add this for mobile responsiveness */
+@media screen and (max-width: 768px) {
+    .navbar .nav-links {
+        flex-direction: column;
+    }
+
+    .admin-login-content {
+        padding: 20px;
+    }
+
+    .admin-login-content h2 {
+        font-size: 24px;
+    }
+}
+/* Upload Form */
+.upload-form {
+    margin-top: 20px;
+}
+
+.upload-form label {
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    color: #555;
+}
+
+.upload-form input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.btn-upload {
+    background-color: #ff8c42; /* Light Orange */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+}
+
+.btn-upload:hover {
+    opacity: 0.9;
+}
+
+/* Share Form */
+.share-form {
+    margin-top: 20px;
+}
+
+.share-form label {
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    color: #555;
+}
+
+.share-form select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.btn-share {
+    background-color: #ff8c42; /* Light Orange */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+}
+
+.btn-share:hover {
+    opacity: 0.9;
+}
+/* Shared Files Section Styles */
+.shared-files-section {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 40px; /* Adding space between sections */
+}
+
+.shared-files-section h1 {
+    font-size: 24px;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.shared-files-section .intro {
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.shared-files-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.file-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.file-item span {
+    font-size: 16px;
+    color: #555;
+}
+
+.file-item .btn-download {
+    background-color: #ff8c42;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.file-item .btn-download:hover {
+    background-color: #e67e34;
+}
+
+.file-item .btn-download i {
+    font-size: 16px;
+}
+
+
+/* Password Form */
+.password-form {
+    margin-top: 20px;
+}
+
+.password-form label {
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    color: #555;
+}
+
+.password-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.btn-set-password {
+    background-color: #ff8c42; /* Light Orange */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+}
+
+.btn-set-password:hover {
+    opacity: 0.9;
+}
+
+/* Center the authentication container */
+.main-content {
+    margin-top: 180px;
+}
+
+.auth-container {
+    margin-top: 480px;
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.auth-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Input Fields */
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* Register Button */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #ff8c42;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #ff6a1f;
+}
+p {
+    text-align: center;
+    margin-top: 20px;
+}
+
+p a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+/* Eye Icon */
+.password-container {
+    position: relative;
+}
+
+.password-container i {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
